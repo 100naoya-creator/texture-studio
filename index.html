@@ -6,7 +6,9 @@
     <title>スマホで簡単！マイクラリソースパック作成メーカー｜統合版対応</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f2f5; color: #333; padding: 20px 10px; display: flex; flex-direction: column; align-items: center; touch-action: none; }
+        /* ここを修正しました */
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f2f5; color: #333; padding: 20px 10px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; overflow-y: auto; }
+        
         h1 { color: #2c3e50; margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
         .intro-text { width: 320px; max-width: 80vw; margin-bottom: 20px; font-size: 13px; color: #666; line-height: 1.4; text-align: center; }
         .header { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 20px; width: 100%; max-width: 600px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
@@ -16,7 +18,7 @@
         .footer { margin-top: 20px; padding: 20px; background: #fff; border-radius: 12px; width: 320px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         button { padding: 12px; cursor: pointer; border: none; border-radius: 6px; background: #e0e0e0; font-weight: bold; }
         button:active { background: #d0d0d0; }
-        .instructions { margin-top: 30px; padding: 20px; background: #fff; border-radius: 12px; width: 320px; font-size: 14px; line-height: 1.6; color: #555; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .instructions { margin-top: 30px; padding: 20px; background: #fff; border-radius: 12px; width: 320px; font-size: 14px; line-height: 1.6; color: #555; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 50px; }
         .instructions strong { color: #3498db; }
     </style>
 </head>
@@ -151,8 +153,8 @@
         canvas.addEventListener('mousedown', startDraw);
         canvas.addEventListener('mousemove', drawing);
         window.addEventListener('mouseup', () => isDrawing = false);
-        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDraw(e); }, { passive: false });
-        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); drawing(e); }, { passive: false });
+        canvas.addEventListener('touchstart', (e) => { startDraw(e); }, { passive: false });
+        canvas.addEventListener('touchmove', (e) => { drawing(e); }, { passive: false });
         canvas.addEventListener('touchend', () => isDrawing = false);
 
         function floodFill(x, y, hexColor) {
