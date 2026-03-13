@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Minecraft Texture Studio</title>
+    <title>スマホで簡単！マイクラリソースパック作成メーカー｜統合版対応</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f2f5; color: #333; padding: 20px 10px; display: flex; flex-direction: column; align-items: center; touch-action: none; }
         h1 { color: #2c3e50; margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
+        .intro-text { width: 320px; max-width: 80vw; margin-bottom: 20px; font-size: 13px; color: #666; line-height: 1.4; text-align: center; }
         .header { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 20px; width: 100%; max-width: 600px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .main-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
         canvas { border: 4px solid #fff; width: 320px; height: 320px; max-width: 80vw; max-height: 80vw; image-rendering: pixelated; cursor: crosshair; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 4px; }
@@ -22,6 +23,10 @@
 <body>
 
     <h1>リソースパック作成メーカー</h1>
+    
+    <div class="intro-text">
+        マイクラ（Minecraft）の統合版リソースパックを、スマホだけで誰でも簡単に作成できるWebツールです。難しいPC操作やプログラミングは不要。ID名を入力してドットを描くだけで、自分だけのmcpackファイルを生成できます。
+    </div>
 
     <div class="header">
         <label>種類: </label>
